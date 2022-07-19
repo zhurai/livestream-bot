@@ -1,16 +1,7 @@
 const tmi = require('tmi.js');
-
-// Define configuration options
-const opts = {
-  identity: {
-    username: '<BOT_USERNAME>',
-    password: '<OAUTH_TOKEN>'
-  },
-  channels: [
-    '<CHANNEL_NAME>'
-  ]
-};
-
+var config = require('./config');
+console.log(config.opts())
+/*
 // Create a client with our options
 const client = new tmi.client(opts);
 
@@ -48,4 +39,4 @@ function rollDice () {
 function onConnectedHandler (addr, port) {
   console.log(`* Connected to ${addr}:${port}`);
 }
-
+*/
