@@ -1,6 +1,6 @@
 const tmi = require('tmi.js');
 var config = require('./config');
-console.log(config.opts())
+console.log(config.opts)
 /*
 // Create a client with our options
 const client = new tmi.client(opts);
