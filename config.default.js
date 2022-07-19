@@ -5,10 +5,10 @@ config.channels = ['channel'];
 
 config.opts = {
     identity: {
-      username: this.username(),
-      password: this.password()
+      username: config.username,
+      password: config.password
     },
-    channels: this.channels()
+    channels: config.channels
 };
 
 module.exports = config;
