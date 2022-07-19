@@ -1,9 +1,9 @@
 const tmi = require('tmi.js');
 var config = require('./config');
 console.log(config.opts)
-/*
+
 // Create a client with our options
-const client = new tmi.client(opts);
+const client = new tmi.client(config.opts);
 
 // Register our event handlers (defined below)
 client.on('message', onMessageHandler);
@@ -39,4 +39,4 @@ function rollDice () {
 function onConnectedHandler (addr, port) {
   console.log(`* Connected to ${addr}:${port}`);
 }
-*/
+
