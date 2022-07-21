@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/zhurai/livestream-bot#readme",
   "dependencies": {
+    "node-libcurl": "^2.3.4",
     "tmi.js": "^1.8.5"
   }
 }
