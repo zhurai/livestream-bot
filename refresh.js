@@ -5,10 +5,12 @@ const { curly } = require('node-libcurl');
 const { data } = await curly.post(url, {
   postFields: JSON.stringify(
     { 
-        grant_type: 'refresh_token',
-        refresh_token: config.refreshtoken,
         client_id: config.clientid,
-        client_secret: config.clientsecret
+        client_secret: config.clientsecret,
+        grant_type: 'authorization_code',
+        code: config.code,
+        refresh_token: config.refreshtoken,
+        redirect_uri: "http://localhost:3000"
     }),
   httpHeader: [
     'Content-Type: application/x-www-form-urlencoded',
