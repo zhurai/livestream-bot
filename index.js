@@ -1,5 +1,5 @@
 const tmi = require('tmi.js');
-var config = require('./config');
+const config = require('./config');
 
 // Create a client with our options
 const client = new tmi.client(config.opts);
@@ -23,15 +23,15 @@ function onMessageHandler (target, context, msg, self) {
     const num = rollDice();
     client.say(target, `You rolled a ${num}`);
     console.log(`* Executed ${commandName} command`);
-  } else {
+  } 
+  else if (commandName === '!discord'){
+    const discordlink=discord()
+    client.say(target, `zhurai's Discord Link is ${discordlink}`);
+    console.log(`* Executed ${commandName} command`);
+  }
+  else {
     console.log(`* Unknown command ${commandName}`);
   }
-}
-
-// Function called when the "dice" command is issued
-function rollDice () {
-  const sides = 6;
-  return Math.floor(Math.random() * sides) + 1;
 }
 
 // Called every time the bot connects to Twitch chat
