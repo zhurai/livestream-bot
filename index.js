@@ -31,8 +31,8 @@ function options(access_token){
 }
 
 // Creates and returns the tmi.js client
-function tmi_client(values){
-  var client = new tmi.client(values[0]);
+function tmi_client(opts){
+  var client = new tmi.Client(opts);
   client.on('message', onMessageHandler);
   client.on('connected', onConnectedHandler);
   return client;
