@@ -3,8 +3,8 @@ var config = require('./config');
 const https  = require('node:https');
 
 async function refresh_access_tokens(){
-  const access_token = "";
-  const refresh_token = "";
+  var access_token = "";
+  var refresh_token = "";
   const data = "client_id="+config.config.clientid+"&client_secret="+config.config.clientsecret+"&grant_type=refresh_token&refresh_token="+config.config.refreshtoken;
   const options = {
     port: 443,
