@@ -2,24 +2,32 @@ const tmi = require('tmi.js');
 const config = require('./config');
 const refresh = require('./refresh');
 
-opts = {
-  identity: {
-    username: config.config.username,
-    password: 'oauth: TBD',
-  },
-  channels: config.config.channels
-};
+// Get Data
+var response=refresh.refresh_access_tokens()
 
 // Do not continue until all Promises have been fulfilled
-Promise.all([opts])
+Promise.all([response])
 .then(values => {
-  const client = tmi_client(values);
+  opts=options(response[2])
+  const client = tmi_client(opts);
   client.connect();
 })
 .catch(error => {
   console.error(error.message);
   process.exit(1)
 });
+
+// Creates the Payload for the tmi.js client
+function options(access_token){
+  opts = {
+    identity: {
+      username: config.config.username,
+      password: 'oauth: '+access_token,
+    },
+    channels: config.config.channels
+  };
+  return opts
+}
 
 // Creates and returns the tmi.js client
 function tmi_client(values){
