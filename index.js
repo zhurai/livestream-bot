@@ -9,7 +9,7 @@ var response=refresh.refresh_access_tokens()
 // Do not continue until all Promises have been fulfilled
 Promise.all([response])
 .then(values => {
-  opts=options(response[2])
+  opts=options(response[0])
   const client = tmi_client(opts);
   client.connect();
 })
