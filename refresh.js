@@ -20,7 +20,8 @@ async function refresh_access_tokens(){
     res.on('data', d => {
       if (res.statusCode == 200){
         response = JSON.parse(d);
-        accesstoken = response.access_token;
+        access_token = response.access_token;
+        refresh_token = response.refresh_token;
       }
       else {
         console.error("Incorrect HTTP Status Code:"+ res.statusCode);
