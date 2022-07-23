@@ -24,7 +24,7 @@ async function refresh_access_tokens(){
       }
       else {
         console.error("Incorrect HTTP Status Code:"+ res.statusCode);
-        console.error(response)
+        console.error(d)
         process.exit(1);
       }
     })});
