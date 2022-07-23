@@ -4,11 +4,7 @@ const refresh = require('./refresh');
 const cmds = require('./cmd/index.js')
 
 // Get Data
-var response=refresh.refresh_access_tokens()
-
-// Do not continue until all Promises have been fulfilled
-Promise.all([response])
-.then(values => {
+refresh.refresh_access_tokens().then(function(values){
   opts=options(values[0])
   const client = tmi_client(opts);
   client.connect();
@@ -23,7 +19,7 @@ function options(access_token){
   opts = {
     identity: {
       username: config.config.username,
-      password: 'oauth: '+access_token,
+      password: 'oauth:'+access_token,
     },
     channels: config.config.channels
   };
