@@ -35,7 +35,7 @@ async function refresh_access_tokens(){
   req.write(data);
   req.end();
   
-  return Promise.resolve([access_token,refresh_token])
+  return [access_token,refresh_token]
 }
 
 module.exports = { refresh_access_tokens }
