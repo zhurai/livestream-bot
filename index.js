@@ -1,8 +1,17 @@
 const tmi = require('tmi.js');
 const config = require('./config');
+const refresh = require('./refresh');
+
+opts = {
+  identity: {
+    username: config.username,
+    password: 'oauth:'+refresh.get_accesstoken()
+  },
+  channels: config.channels
+};
 
 // Create a client with our options
-const client = new tmi.client(config.opts);
+const client = new tmi.client(opts);
 
 // Register our event handlers (defined below)
 client.on('message', onMessageHandler);
@@ -38,4 +47,3 @@ function onMessageHandler (target, context, msg, self) {
 function onConnectedHandler (addr, port) {
   console.log(`* Connected to ${addr}:${port}`);
 }
-
