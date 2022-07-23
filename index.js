@@ -1,6 +1,7 @@
 const tmi = require('tmi.js');
 const config = require('./config');
 const refresh = require('./refresh');
+const cmds = require('./cmd/index.js')
 
 // Get Data
 var response=refresh.refresh_access_tokens()
@@ -46,7 +47,7 @@ function onMessageHandler (target, context, msg, self) {
 
   // If the command is known, let's execute it
   if (commandName === '!dice') {
-    const num = rollDice();
+    const num = cmds.dice.dice();
     client.say(target, `You rolled a ${num}`);
     console.log(`* Executed ${commandName} command`);
   } 
