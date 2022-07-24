@@ -1,6 +1,8 @@
-// Function called when the "dice" command is issued
 function arknightsroguelike () {
     return ""
 }
+
+// top/medium/bottom vote for next choice in upcoming node/questions
+// next (zhurai only)
 
 module.exports = arknightsroguelike();
