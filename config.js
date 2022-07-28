@@ -1,13 +1,11 @@
 const fs = require('fs')
 const jsonfile = './config.json';
 
-if (!fs.existsSync(jsonfile))
-{
-    console.error("config.json does not exist, please make config.json");
-    process.exit(1);
-}
 var jsonobj = JSON.parse(fs.readFileSync(jsonfile, (err) => {
-    if (err) throw err;
+    if (err) {
+        console.error("config.json does not exist, please make config.json");
+        throw err;
+    }
 }));
 
 function updateConfig (access_token,refresh_token)
