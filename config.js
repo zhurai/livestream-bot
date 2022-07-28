@@ -1,20 +1,27 @@
+const fs = require('fs')
 const jsonfile = './config.json';
 
-var config = {};
-// Bot Username
-config.username = jsonfile.username;
-// Channels the bot goes in
-config.channels = jsonfile.channels;
+if (!fs.existsSync(jsonfile))
+{
+    console.error("config.json does not exist, please make config.json");
+    process.exit(1);
+}
+var jsonobj = JSON.parse(fs.readFileSync(jsonfile,'utf8'));
 
-// Twitch Application - Client ID: https://dev.twitch.tv/console
-config.clientid = jsonfile.twitchClientId;
-// Twitch Application - Client Secret: https://dev.twitch.tv/console
-config.clientsecret = jsonfile.twitchClientSecret;
+module.exports = { 
+    // Bot Username
+    username: jsonobj.username,
+    // Channels the bot goes in
+    channels: jsonobj.channels,
 
-// Code - Log into the bot, and go to this URL: https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=CLIENTID&client_secret=CLIENTSECRET&scope=chat%3Aread+chat%3Aedit&state=c3ab8aa609ea11e793ae92361f002671&redirect_uri=http://localhost:3000
-config.code = jsonfile.twitchUserCode;
+    // Twitch Application - Client ID: https://dev.twitch.tv/console
+    clientid: jsonobj.twitchClientId,
+    // Twitch Application - Client Secret: https://dev.twitch.tv/console
+    clientsecret: jsonobj.twitchClientSecret,
 
-// Refresh Token  - run scripts/initial.js with the above inputs and copy it here
-config.refreshtoken = jsonfile.twitchRefreshToken;
+    // Code - Log into the bot, and go to this URL: https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=CLIENTID&client_secret=CLIENTSECRET&scope=chat%3Aread+chat%3Aedit&state=c3ab8aa609ea11e793ae92361f002671&redirect_uri=http://localhost:3000
+    code: jsonobj.twitchUserCode,
 
-module.exports = { config };
+    // Refresh Token  - run scripts/initial.js with the above inputs and copy it here
+    refreshtoken: jsonobj.twitchRefreshToken
+};

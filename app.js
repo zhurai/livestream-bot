@@ -18,10 +18,10 @@ refresh.refresh_access_tokens().then(function(values){
 function options(access_token){
   opts = {
     identity: {
-      username: config.config.username,
+      username: config.username,
       password: 'oauth:'+access_token,
     },
-    channels: config.config.channels
+    channels: config.channels
   };
   return opts
 }

@@ -2,7 +2,7 @@ var url="https://id.twitch.tv/oauth2/token";
 var config = require('../config');
 const https  = require('node:https');
 
-const data = "client_id="+config.config.twitchClientId+"&client_secret="+config.config.twitchClientSecret+"&grant_type=authorization_code&redirect_uri=http://localhost:3000&code="+config.config.twitchUserCode;
+const data = "client_id="+config.clientid+"&client_secret="+config.clientsecret+"&grant_type=authorization_code&redirect_uri=http://localhost:3000&code="+config.code;
 
 const options = {
   port: 443,
@@ -40,5 +40,3 @@ req.on('error', error => {
 
 req.write(data);
 req.end();
-    
-
