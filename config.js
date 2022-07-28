@@ -6,14 +6,18 @@ if (!fs.existsSync(jsonfile))
     console.error("config.json does not exist, please make config.json");
     process.exit(1);
 }
-var jsonobj = JSON.parse(fs.readFileSync(jsonfile));
+var jsonobj = JSON.parse(fs.readFileSync(jsonfile, (err) => {
+    if (err) throw err;
+}));
 
 function updateConfig (access_token,refresh_token)
 {
     jsonobj.twitchAccessToken = access_token
     jsonobj.twitchRefreshToken = refresh_token
     var jsondata = JSON.stringify(jsonobj)
-    fs.writeFile(jsonfile,jsondata)
+    fs.writeFile(jsonfile,jsondata,(err) => {
+        if (err) throw err;
+    })
 }
 
 module.exports = { 
