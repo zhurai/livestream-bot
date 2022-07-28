@@ -22,7 +22,7 @@ function refresh_access_tokens(){
         if (res.statusCode != 200){
           console.error("Incorrect HTTP Status Code:"+ res.statusCode);
           console.error(d);
-          return reject(new Error("statuscode= "+ res.statusCode));
+          return reject(new Error("statuscode = "+ res.statusCode));
         }
         else{
           response = JSON.parse(d);
