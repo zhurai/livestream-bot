@@ -1,5 +1,5 @@
 var url="https://id.twitch.tv/oauth2/token";
-var config = require('./config');
+const config = require('./config');
 const https  = require('node:https');
 
 function refresh_access_tokens(){

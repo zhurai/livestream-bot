@@ -1,4 +1,4 @@
-var jsonfile = require('./config.json');
+const jsonfile = './config.json';
 
 var config = {};
 // Bot Username
