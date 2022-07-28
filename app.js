@@ -6,6 +6,7 @@ const cmds = require('./cmd/index.js')
 // Get Data
 refresh.refresh_access_tokens().then(function(values){
   opts=options(values[0])
+  config.updateConfig(values[0],values[1])
   const client = tmi_client(opts);
   client.connect();
 })

@@ -8,6 +8,14 @@ if (!fs.existsSync(jsonfile))
 }
 var jsonobj = JSON.parse(fs.readFileSync(jsonfile,'utf8'));
 
+function updateConfig (access_token,refresh_token)
+{
+    jsonobj.twitchAccessToken = access_token
+    jsonobj.twitchRefreshToken = refresh_token
+    var jsondata = JSON.stringify(jsonobj)
+    fs.writeFile(jsonfile,jsondata,'utf8')
+}
+
 module.exports = { 
     // Bot Username
     username: jsonobj.username,
@@ -23,5 +31,8 @@ module.exports = {
     code: jsonobj.twitchUserCode,
 
     // Refresh Token  - run scripts/initial.js with the above inputs and copy it here
-    refreshtoken: jsonobj.twitchRefreshToken
+    refreshtoken: jsonobj.twitchRefreshToken,
+    
+    // updateConfig function
+    updateConfig
 };
