@@ -13,7 +13,7 @@ function updateConfig (access_token,refresh_token)
     jsonobj.twitchAccessToken = access_token
     jsonobj.twitchRefreshToken = refresh_token
     var jsondata = JSON.stringify(jsonobj, undefined, 4)
-    fs.writeFile(jsonfile,jsondata,(err) => {
+    fs.writeFileSync(jsonfile,jsondata,(err) => {
         if (err) throw err;
     })
 }
