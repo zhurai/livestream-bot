@@ -32,10 +32,15 @@ module.exports = {
     // Twitch Application - Client Secret: https://dev.twitch.tv/console
     clientsecret: jsonobj.twitchClientSecret,
 
-    // Code - Log into the bot, and go to this URL: https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=CLIENTID&client_secret=CLIENTSECRET&scope=chat%3Aread+chat%3Aedit&state=c3ab8aa609ea11e793ae92361f002671&redirect_uri=http://localhost:3000
+    // Code - Log into the bot, and go to this URL: 
+    // https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=CLIENTID&client_secret=CLIENTSECRET&scope=chat%3Aread+chat%3Aedit&state=c3ab8aa609ea11e793ae92361f002671&redirect_uri=http://localhost:3000
+    // scope needs to be changed if you wish to access more of the twitch api as the user.
     code: jsonobj.twitchUserCode,
 
-    // Refresh Token  - run scripts/initial.js with the above inputs and copy it here
+    // Access Token - leave this empty or with default values (do not edit)
+    accesstoken: jsonobj.twitchAccessToken,
+    
+    // Refresh Token - leave this empty or with default values (do not edit)
     refreshtoken: jsonobj.twitchRefreshToken,
     
     // updateConfig function
