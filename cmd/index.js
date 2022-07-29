@@ -7,12 +7,12 @@ function onMessageHandler (client, channel, tags, message, self){
     if (!message.startsWith("!")) { return; }
     
     // organize data
-    const msgArray = msg.trim().split(' ');
+    const msgArray = message.trim().split(' ');
     console.log(message)
     
     if (msgArray[0] == "!dice")
     {
-        const num = 1
+        const num = 1;
         client.say(channel, `You rolled a ${num}`);
         console.log(`* Executed ${commandName} command`);
     }
