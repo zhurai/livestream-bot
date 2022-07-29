@@ -11,8 +11,8 @@ function onMessageHandler (client, channel, tags, message, self){
     
     if (msgArray[0] == "!dice")
     {
-        const num = cmds.dice.dice();
-        client.say(target, `You rolled a ${num}`);
+        const num = 1
+        client.say(channel, `You rolled a ${num}`);
         console.log(`* Executed ${commandName} command`);
     }
     
