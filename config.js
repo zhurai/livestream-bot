@@ -23,6 +23,9 @@ module.exports = {
     username: jsonobj.username,
     // Channels the bot goes in
     channels: jsonobj.channels,
+    
+    // Bot Command Trigger
+    trigger: jsonobj.trigger,
 
     // Twitch Application - Client ID: https://dev.twitch.tv/console
     clientid: jsonobj.twitchClientId,

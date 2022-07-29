@@ -3,6 +3,7 @@
     "channels": [
         "YourChannel"
     ],
+    "trigger": "!",
     "twitchClientId": "Client ID: https://dev.twitch.tv/console",
     "twitchClientSecret": "Client Secret: https://dev.twitch.tv/console",
     "twitchUserCode": "User Code: Log into the bot and go to this URL https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=CLIENTID&client_secret=CLIENTSECRET&scope=chat%3Aread+chat%3Aedit&state=c3ab8aa609ea11e793ae92361f002671&redirect_uri=http://localhost:3000",
