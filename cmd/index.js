@@ -8,6 +8,7 @@ function onMessageHandler (client, channel, tags, message, self){
     
     // organize data
     const msgArray = msg.trim().split(' ');
+    console.log(message)
     
     if (msgArray[0] == "!dice")
     {
