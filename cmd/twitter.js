@@ -2,4 +2,4 @@ function twitter () {
     return ""
 }
 
-module.exports = twitter();
+module.exports = { twitter }

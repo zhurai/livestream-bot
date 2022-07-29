@@ -2,4 +2,4 @@ function eightball () {
     return ""
 }
 
-module.exports = eightball();
+module.exports = { eightball }

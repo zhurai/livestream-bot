@@ -2,4 +2,4 @@ function bilibili () {
     return ""
 }
 
-module.exports = bilibili();
+module.exports = { bilibili }

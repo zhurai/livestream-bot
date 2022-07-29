@@ -2,5 +2,5 @@ function schedule () {
     return ""
 }
 
-module.exports = schedule();
+module.exports = { schedule }
  

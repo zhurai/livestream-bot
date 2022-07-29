@@ -2,5 +2,5 @@ function commands () {
     return ""
 }
 
-module.exports = commands();
+module.exports = { commands }
  

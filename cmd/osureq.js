@@ -1,5 +1,5 @@
-function osu_request () {
+function osurequest () {
     return ""
 }
 
-module.exports = osu_request();
+module.exports = { osurequest }

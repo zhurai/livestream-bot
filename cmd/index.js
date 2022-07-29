@@ -1,25 +1,61 @@
 const config = require('../config');
+const eightball = require ('./8ball')
+const arknightsroguelike = require ('./arknightsroguelike')
+const bilibili = require ('./bilibili')
+const cmd = require ('./cmd')
+const dice = require ('./dice')
+const discord = require ('./discord')
+const osureq = require ('./osureq')
+const pronouns = require ('./pronouns')
+const schedule = require ('./schedule')
+const socials = require ('./socials')
+const twitter = require ('./twitter')
+const youtube = require ('./youtube')
 
 function onMessageHandler (client, channel, tags, message, self){
     // ignore messages from the bot
     if (self) { return; }
     // ignore messages that aren't a command
-    if (!message.startsWith("!")) { return; }
+    if (!message.startsWith(config.trigger)) { return; }
     
     // organize data
-    const msgArray = message.trim().split(' ');
-    console.log(message)
-    
-    if (msgArray[0] == "!dice")
-    {
-        const num = 1;
-        client.say(channel, `You rolled a ${num}`);
-        console.log(`* Executed ${commandName} command`);
+    var msgArray = message.trim().split(' ');
+    var command = msgArray[0].substring(1);
+    console.log("New Message:" + message)
+
+    switch (command){
+        case "8ball":
+            break;
+        case "arknightsroguelike":
+            break;
+        case "bilibili":
+            break;
+        case "cmd":
+            break;
+        case "dice":
+            dice.dice(client,channel,tags,message);
+            break;
+        case "discord":
+            break;
+        case "osureq":
+            break;
+        case "pronouns":
+            break;
+        case "schedule":
+            break;
+        case "socials":
+            break;
+        case "twitter":
+            break;
+        case "youtube":
+            break;
+        default:
+            console.log("Unknown Command: " + msgArray[0])
+            break;
     }
+    
     
 }
 
-// imports all other commands
-const dice = require('./dice.js')
 
-module.exports = { onMessageHandler, dice }
+module.exports = { onMessageHandler }

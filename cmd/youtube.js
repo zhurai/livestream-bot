@@ -2,4 +2,5 @@ function youtube () {
     return ""
 }
 
-module.exports = youtube();
+module.exports = { youtube }
+

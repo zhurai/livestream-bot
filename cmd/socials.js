@@ -2,5 +2,5 @@ function socials () {
     return ""
 }
 
-module.exports = socials();
+module.exports = { socials }
  

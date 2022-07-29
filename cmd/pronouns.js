@@ -2,4 +2,4 @@ function pronouns () {
     return ""
 }
 
-module.exports = pronouns();
+module.exports = { pronouns }
