@@ -30,27 +30,9 @@ function options(access_token){
 // Creates and returns the tmi.js client
 function tmi_client(opts){
   var client = new tmi.Client(opts);
-  client.on('message', onMessageHandler);
+  client.on('message', cmds.onMessageHandler(client,channel, tags, message,self));
   client.on('connected', onConnectedHandler);
   return client;
-}
-
-// Called every time a message comes in
-function onMessageHandler (target, context, msg, self) {
-  if (self) { return; } // Ignore messages from the bot
-
-  // Remove whitespace from chat message
-  const commandName = msg.trim();
-
-  // If the command is known, let's execute it
-  if (commandName === '!dice') {
-    const num = cmds.dice.dice();
-    client.say(target, `You rolled a ${num}`);
-    console.log(`* Executed ${commandName} command`);
-  } 
-  else {
-    console.log(`* Unknown command ${commandName}`);
-  }
 }
 
 // Called when connected
