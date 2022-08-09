@@ -26,7 +26,7 @@ function onMessageHandler (client, channel, tags, message, self){
     switch (command){
         case "8ball":
             break;
-        case "arknightsroguelike":
+        case "akrl": // arknights roguelike commands
             break;
         case "bilibili":
             break;
